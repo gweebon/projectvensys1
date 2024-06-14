@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Transactions</title>
+</head>
+<body>
+    <h1>Transactions</h1>
+    <ul>
+        {% for transaction in transactions %}
+		<li>Id: {{ transaction.id }}</li>
+        <li>Message Type: {{ transaction.messageType }}</li>
+        <li>Transaction Reference Number: {{ transaction.transactionReferenceNumber }}</li>
+        <li>Date: {{ transaction.date }}</li>
+        <li>Currency: {{ transaction.currency }}</li>
+        <li>Value: {{ transaction.value }}</li>
+        <li>Details of Charges: {{ transaction.detailsOfCharges }}</li>
+        <hr>
+        {% endfor %}
+    </ul>
+</body>
+</html>

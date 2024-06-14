@@ -1,0 +1,4 @@
+This is a sample text file.
+It contains multiple lines.
+Each line demonstrates a different piece of data.
+You can include any content you want to test your Django application.
