@@ -2,20 +2,43 @@
 <html>
 <head>
     <title>View Transactions</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Transactions</h1>
-    <ul>
-        {% for transaction in transactions %}
-		<li>Id: {{ transaction.id }}</li>
-        <li>Message Type: {{ transaction.messageType }}</li>
-        <li>Transaction Reference Number: {{ transaction.transactionReferenceNumber }}</li>
-        <li>Date: {{ transaction.date }}</li>
-        <li>Currency: {{ transaction.currency }}</li>
-        <li>Value: {{ transaction.value }}</li>
-        <li>Details of Charges: {{ transaction.detailsOfCharges }}</li>
-        <hr>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <h1 class="mt-5">Transactions</h1>
+        <table class="table table-striped table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Message Type</th>
+                    <th>Transaction Reference Number</th>
+                    <th>Date</th>
+                    <th>Currency</th>
+                    <th>Value</th>
+                    <th>Details of Charges</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.id }}</td>
+                    <td>{{ transaction.messageType }}</td>
+                    <td>{{ transaction.transactionReferenceNumber }}</td>
+                    <td>{{ transaction.date }}</td>
+                    <td>{{ transaction.currency }}</td>
+                    <td>{{ transaction.value }}</td>
+                    <td>{{ transaction.detailsOfCharges }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
